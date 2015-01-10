@@ -7,7 +7,7 @@ Modul Objektorientierte Geometrie<br>
 Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2014
 <hr>
 ##### Beschreibung
-Qt-Applikation zum Visualisieren von Quadriken im Raum.
+Qt-Applikation zur Visualisierung von Quadriken im Raum.
 <hr>
 ##### Stichworte
 - Projektiver Raum, homogene Koordinaten
