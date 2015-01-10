@@ -18,7 +18,7 @@ Stichworte:
 - Orthogonale und perspektivische Projektion
 - Stereoskopie, spektrales Multiplexing, Farbanaglyphen
 - Programmiersprache: C/C++
-- OpenGL, GLU, freeglut, GLM
+- OpenGL, GLU, freeglut, GLM, Vertex-Shader
 - GUI: Qt
 
 Bericht:
