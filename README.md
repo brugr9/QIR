@@ -6,5 +6,4 @@
 Semesterarbeit<br>
 BFH-TI, Modul Objektorientierte Geometrie HS 2014<br>
 
-(Bericht: https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-bericht)
-(Präsentation: https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-prasentation)
+<a href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-bericht">Bericht</a>, <a href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-prasentation">Präsentation</a>
