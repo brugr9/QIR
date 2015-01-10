@@ -14,7 +14,7 @@ Beschreibung:
 Stichworte:
 - Projektiver Raum, homogene Koordinaten
 - Kollineation, projektive Transformation
-- Geometrische Transformation (Translation, Skalierung, Rotation)
+- Geometrische Transformation (Skalierung, Rotation)
 - Orthogonale und perspektivische Projektion
 - Stereoskopie, spektrales Multiplexing, Farbanaglyphen
 - Programmiersprache: C/C++
