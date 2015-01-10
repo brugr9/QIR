@@ -13,6 +13,6 @@ Themen:
 - Homogene Koordinaten
 - Geometrische Transformation
 - Projektive Transformation
-- C/C++
+- Programmiersprache: C/C++
 - OpenGL, GLU, freeglut, GLM
-- Qt
+- GUI: Qt
