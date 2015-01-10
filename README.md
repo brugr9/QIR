@@ -11,7 +11,7 @@ Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2014
 Beschreibung:
 - Qt-Applikation zum Visualisieren von Quadriken im Raum.
 
-Themen:
+Stichworte:
 - Projektiver Raum, homogene Koordinaten
 - Kollineation, projektive Transformation
 - Geometrische Transformation (Translation, Skalierung, Rotation)
