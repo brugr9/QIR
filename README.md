@@ -12,10 +12,11 @@ Beschreibung:
 - Qt-Applikation zum Visualisieren von Quadriken im Raum.
 
 Themen:
-- Projektiver Raum
-- Homogene Koordinaten
-- Geometrische Transformation
-- Projektive Transformation
+- Projektiver Raum, homogene Koordinaten
+- Kollineation, projektive Transformation
+- Geometrische Transformation (Translation, Skalierung, Rotation)
+- Orthogonale und perspektivische Projektion
+- Stereoskopie, spektrales Multiplexing, Anaglyphen
 - Programmiersprache: C/C++
 - OpenGL, GLU, freeglut, GLM
 - GUI: Qt
