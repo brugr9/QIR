@@ -19,7 +19,7 @@ Stichworte:
 - Stereoskopie, spektrales Multiplexing, Farbanaglyphen
 - Programmiersprache: C/C++
 - OpenGL, GLU, freeglut, GLM, Vertex-Shader
-- GUI: Qt
+- GUI: Qt-Designer
 
 Bericht:
 - <a target="_blank" href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-bericht">Bericht</a> (auf speakerdeck)
