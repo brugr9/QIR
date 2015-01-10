@@ -1,4 +1,4 @@
-# Quadriken im Raum und ihre Schnittbilder an ebenen Flächen
+# Quadriken im Raum <br>und ihre Schnittbilder an ebenen Flächen
 ### Geometrische Algebra in der Computergrafik
 
 #### Semesterarbeit
