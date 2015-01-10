@@ -16,7 +16,7 @@ Stichworte:
 - Kollineation, projektive Transformation
 - Geometrische Transformation (Translation, Skalierung, Rotation)
 - Orthogonale und perspektivische Projektion
-- Stereoskopie, spektrales Multiplexing, Anaglyphen
+- Stereoskopie, spektrales Multiplexing, Farbanaglyphen
 - Programmiersprache: C/C++
 - OpenGL, GLU, freeglut, GLM
 - GUI: Qt
