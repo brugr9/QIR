@@ -1,8 +1,9 @@
 # QIR
-### Quadriken im Raum und ihre Schnittbilder an ebenen Flächen.
+### Quadriken im Raum und ihre Schnittbilder an ebenen Flächen
 
 #### Geometrische Algebra in der Computergrafik
 
+Java-Applikation zum editieren und traversieren von Graphen.
 Semesterarbeit<br>
 BFH-TI, Modul Objektorientierte Geometrie HS 2014
 
