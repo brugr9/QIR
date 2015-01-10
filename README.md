@@ -9,7 +9,7 @@ Modul Objektorientierte Geometrie<br>
 Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne, Januar 2014
 
 Beschreibung:
-- Qt-Applikation zum visualisieren von gekrümmten Flächen im Raum.
+- Qt-Applikation zum Visualisieren von Quadriken im Raum.
 
 Themen:
 - Projektiver Raum
