@@ -6,7 +6,7 @@
 Semesterarbeit
 
 Modul Objektorientierte Geometrie<br>
-Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne, Januar 2014
+Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2014
 
 Beschreibung:
 - Qt-Applikation zum Visualisieren von Quadriken im Raum.
