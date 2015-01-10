@@ -1,4 +1,4 @@
-# QIR
+# QR3
 ### Quadriken im Raum und ihre Schnittbilder an ebenen Flächen
 
 #### Geometrische Algebra in der Computergrafik
