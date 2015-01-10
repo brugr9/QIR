@@ -1,8 +1,8 @@
 # Quadriken im Raum und ihre Schnittbilder an ebenen Flächen
 
-#### Geometrische Algebra in der Computergrafik
+### Geometrische Algebra in der Computergrafik
 
-##### Semesterarbeit
+#### Semesterarbeit
 
 Modul Objektorientierte Geometrie<br>
 Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2014
