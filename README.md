@@ -20,5 +20,7 @@ Qt-Applikation zur Visualisierung von Quadriken im Raum.
 - GUI mit Qt-Designer
 
 ##### Bericht
+
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 - <a target="_blank" href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-bericht">Bericht</a> (auf speakerdeck)
 - <a target="_blank" href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-prasentation">Präsentation</a> (auf speakerdeck)
