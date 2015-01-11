@@ -16,7 +16,7 @@ Qt-Applikation zur Visualisierung von Quadriken im Raum.
 - Orthogonale und perspektivische Projektion
 - Stereoskopie, spektrales Multiplexing, Farbanaglyphen
 - Programmiersprache C/C++
-- OpenGL, GLU, freeglut, GLM, Vertex-Shader
+- QGLWidget, OpenGL, GLU, freeglut, GLM, Vertex-Shader
 - GUI mit Qt-Designer
 
 ##### Bericht
