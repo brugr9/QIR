@@ -9,7 +9,8 @@ Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2014
 ![qir GUI](doc/qir_gui.png "qir GUI")
 <hr>
 ##### Beschreibung
-Qt-Applikation zur Visualisierung von Quadriken im Raum.
+Qt-Applikation zur Visualisierung von Quadriken im Raum.<br>
+(Achtung: Die Entwicklung ist noch im Gange, Abgabetermin: Woche 3 2015)
 <hr>
 ##### Stichworte
 - Projektiver Raum, homogene Koordinaten
