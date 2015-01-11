@@ -40,10 +40,10 @@ SOURCES += aboutwindow.cpp \
            lib/zpr.c
 
 OTHER_FILES += \
-    ../img/about_cut.png \
+    ../img/about_cut.png\
     ../img/BFH_Logo.png\
-    ../img/Einschaliges_Hyperboloid.png \
-    ../img/Ellipse.png \
-    ../img/Elliptisches_Paraboloid.png \
-    ../img/Hyperbolisches_Paraboloid.png \
-    ../img/Zweischaliges_Hyperboloid.png
+    ../img/ellipse.png\
+    ../img/hyperboloidOneSheet.png\
+    ../img/hyperboloidTwoSheets.png\
+    ../img/paraboloidElliptic.png\
+    ../img/paraboloidHyperbolic.png
