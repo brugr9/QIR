@@ -9,9 +9,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TEMPLATE = app
 TARGET = QIR
 
-LIBS     += -lGLU \
-            -lGL \
-            -lglut
+LIBS     += \
+      -lGLU \
+      -lGL \
+      -lglut
 
 INCLUDEPATH += \
 #        /usr/include/c++/4.8 \
@@ -21,29 +22,34 @@ INCLUDEPATH += \
 
 # Input
 HEADERS += \
-           lib/OpenGL.h \
-           lib/UtilGLSL.hpp \
-           lib/UtilGLUT.hpp \
-           lib/zpr.h \
-    aboutwindow.h \
-    mainwindow.h \
-    myglwidget.h
+      lib/OpenGL.h \
+      lib/UtilGLSL.hpp \
+      lib/UtilGLUT.hpp \
+      lib/zpr.h \
+      aboutwindow.h \
+      mainwindow.h \
+      myglwidget.h
 
-FORMS += aboutwindow.ui mainwindow.ui
+FORMS += \
+      aboutwindow.ui \
+      mainwindow.ui
 
-SOURCES += aboutwindow.cpp \
-           main.cpp \
-           mainwindow.cpp \
-           myglwidget.cpp \
-           lib/UtilGLSL.cpp \
-           lib/UtilGLUT.cpp \
-           lib/zpr.c
+SOURCES += \
+      aboutwindow.cpp \
+      main.cpp \
+      mainwindow.cpp \
+      myglwidget.cpp \
+      lib/UtilGLSL.cpp \
+      lib/UtilGLUT.cpp \
+      lib/zpr.c \
+      glsl/qir.vert \
+      glsl/qir.frag
 
 OTHER_FILES += \
-    ../img/about_cut.png\
-    ../img/BFH_Logo.png\
-    ../img/ellipse.png\
-    ../img/hyperboloidOneSheet.png\
-    ../img/hyperboloidTwoSheets.png\
-    ../img/paraboloidElliptic.png\
-    ../img/paraboloidHyperbolic.png
+      ../img/about_cut.png\
+      ../img/BFH_Logo.png\
+      ../img/ellipse.png\
+      ../img/hyperboloidOneSheet.png\
+      ../img/hyperboloidTwoSheets.png\
+      ../img/paraboloidElliptic.png\
+      ../img/paraboloidHyperbolic.png
