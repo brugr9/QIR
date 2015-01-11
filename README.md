@@ -6,7 +6,7 @@
 Modul Objektorientierte Geometrie<br>
 Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2014
 <hr>
-![Bildschirmfoto GUI](doc/qir_gui.png "Bildschirmfoto GUI")
+![qir GUI](doc/qir_gui.png "qir GUI")
 <hr>
 ##### Beschreibung
 Qt-Applikation zur Visualisierung von Quadriken im Raum.
