@@ -23,9 +23,9 @@ INCLUDEPATH += \
 # Input
 HEADERS += \
       lib/OpenGL.h \
-      lib/UtilGLSL.hpp \
-      lib/UtilGLUT.hpp \
-      lib/zpr.h \
+      # lib/UtilGLSL.hpp \
+      # lib/UtilGLUT.hpp \
+      # lib/zpr.h \
       aboutwindow.h \
       mainwindow.h \
       myglwidget.h
@@ -39,17 +39,11 @@ SOURCES += \
       main.cpp \
       mainwindow.cpp \
       myglwidget.cpp \
-      lib/UtilGLSL.cpp \
-      lib/UtilGLUT.cpp \
-      lib/zpr.c \
-      glsl/qir.vert \
-      glsl/qir.frag
+      # lib/UtilGLSL.cpp \
+      # lib/UtilGLUT.cpp \
+      # lib/zpr.c \
+      # glsl/qir.vert \
+      # glsl/qir.frag
 
 OTHER_FILES += \
-      ../img/about_cut.png\
-      ../img/BFH_Logo.png\
-      ../img/ellipse.png\
-      ../img/hyperboloidOneSheet.png\
-      ../img/hyperboloidTwoSheets.png\
-      ../img/paraboloidElliptic.png\
-      ../img/paraboloidHyperbolic.png
+      img/about_cut.png

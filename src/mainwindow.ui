@@ -942,7 +942,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QRadioButton" name="radioButton_orthograficPerspective">
+          <widget class="QRadioButton" name="radioButton_orthograficProjektion">
            <property name="text">
             <string>Orthografische Projektion</string>
            </property>
@@ -955,7 +955,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_projectivePerspective">
+          <widget class="QRadioButton" name="radioButton_projectivicProjektion">
            <property name="text">
             <string>Perspektivische Projektion</string>
            </property>
@@ -1027,8 +1027,8 @@
       <string>Gruppiert nach Normalform</string>
      </property>
      <addaction name="actionMittelpunktsquadrik"/>
-     <addaction name="actionParabolischer_Typ"/>
      <addaction name="actionKegeliger_Typ"/>
+     <addaction name="actionParabolischer_Typ"/>
     </widget>
     <widget class="QMenu" name="menuNicht_degenerierte_Quadrik">
      <property name="title">
@@ -1159,8 +1159,8 @@
   <tabstop>toolButton_left</tabstop>
   <tabstop>toolButton_right</tabstop>
   <tabstop>toolButton_down</tabstop>
-  <tabstop>radioButton_orthograficPerspective</tabstop>
-  <tabstop>radioButton_projectivePerspective</tabstop>
+  <tabstop>radioButton_orthograficProjektion</tabstop>
+  <tabstop>radioButton_projectivicProjektion</tabstop>
   <tabstop>checkBox_stereo</tabstop>
   <tabstop>doubleSpinBox_24</tabstop>
   <tabstop>doubleSpinBox_14</tabstop>

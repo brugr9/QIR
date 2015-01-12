@@ -38,7 +38,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../img/about_cut.png</pixmap>
+      <pixmap>img/about_cut.png</pixmap>
      </property>
     </widget>
    </item>

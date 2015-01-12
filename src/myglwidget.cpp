@@ -19,7 +19,7 @@ MyGLWidget::MyGLWidget(QWidget *parent)
 {
     this->homographyMat4 = {};
     this->coefficientsMat4 = {};
-    zprInit();
+    // TODO zprInit();
 }
 
 
