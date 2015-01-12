@@ -4,7 +4,7 @@
 #### Semesterarbeit
 
 Modul Objektorientierte Geometrie<br>
-Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2014
+Berner Fachhochschule für Technik und Informatik BFH-TI, Biel/Bienne 2015
 <hr>
 ![qir GUI](doc/qir_gui.png "qir GUI")
 <hr>
