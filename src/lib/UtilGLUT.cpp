@@ -14,6 +14,7 @@ history: 1.00 - initial version for OpenGL drawing application
 // system includes ////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <sstream>
+#include <string>
 #ifdef WIN32
 #include <windows.h>
 #endif // WIN32

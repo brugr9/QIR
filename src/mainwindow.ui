@@ -967,7 +967,7 @@
          <item>
           <widget class="QCheckBox" name="checkBox_stereo">
            <property name="text">
-            <string>Stereoskopische Projektion</string>
+            <string>Stereobildwiedergabe</string>
            </property>
            <property name="shortcut">
             <string>Space</string>

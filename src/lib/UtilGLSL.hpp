@@ -26,7 +26,7 @@ public:
 	static GLuint initShaderProgram(int argc, char **argv);
 
 private:
-	static char*  readShaderFile(const string& filename);
+    static char*  readShaderFile(const string& filename);
 	static void   DebugMessageCallback(GLenum source, GLenum type, GLuint id,
 					GLenum severity, GLsizei length, const GLchar* message,	void* userParam);
 };

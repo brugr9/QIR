@@ -1,9 +1,9 @@
 #ifndef MYGLWIDGET_H
 #define MYGLWIDGET_H
 
-#include "lib/OpenGL.h"
+#include "qirglutkeyboard.h"
+#include "qirglutmouse.h"
 #include <QGLWidget>
-#include <QMouseEvent>
 
 /**
  *
@@ -25,6 +25,15 @@ typedef struct {
    double eyesep;       /* Eye separation          */
    int sheight,swidth;  /* screenheight,screenwidth*/
 } CAMERA;
+
+///////////////////////////////////////////////
+// Animation
+void animation(int timer_id);
+void startAnimation(void);
+void stopAnimation(void);
+void fps(void);
+///////////////////////////////////////////////
+
 
 /**
  * @brief An OpenGL-Widget for the QIR application.
@@ -84,18 +93,18 @@ protected:
 
 private:
 
-    /**
-     * @brief homographyMat4
-     */
-    mat4 homographyMat4;
-    /**
-     * @brief coefficientsMat4
-     */
-    mat4 coefficientsMat4;
-    /**
-     * @brief draw
-     */
-    void draw(void);
+    void initCamera(int mode);
+    void Normalise(XYZ *p);
+    void CrossProd(XYZ p1, XYZ p2, XYZ *p3);
+    void stereoscope(void);
+
+    // scene
+    void drawAxis(GLfloat scale);
+
+    // Model
+    void initModel(void);
+    void drawModel(int type);
+
 };
 
 #endif // MYGLWIDGET_H

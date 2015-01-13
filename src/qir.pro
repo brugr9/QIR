@@ -23,25 +23,32 @@ INCLUDEPATH += \
 # Input
 HEADERS += \
       lib/OpenGL.h \
-      # lib/UtilGLSL.hpp \
-      # lib/UtilGLUT.hpp \
-      # lib/zpr.h \
-      aboutwindow.h \
+      lib/UtilGLSL.hpp \
+      lib/UtilGLUT.hpp \
+      lib/zpr.h \
+      qirmodel.h \
+      qirglwidget.h \
+      qirglutkeyboard.h \
+      qirglutmouse.h \
       mainwindow.h \
-      myglwidget.h
+      aboutwindow.h
+
 
 FORMS += \
       aboutwindow.ui \
       mainwindow.ui
 
 SOURCES += \
-      aboutwindow.cpp \
+      lib/UtilGLSL.cpp \
+      lib/UtilGLUT.cpp \
+      lib/zpr.c \
+      qirmodel.c \
+      qirglutkeyboard.c \
+      qirglutmouse.c \
       main.cpp \
       mainwindow.cpp \
-      myglwidget.cpp \
-      # lib/UtilGLSL.cpp \
-      # lib/UtilGLUT.cpp \
-      # lib/zpr.c \
+      qirglwidget.cpp \
+      aboutwindow.cpp \
       # glsl/qir.vert \
       # glsl/qir.frag
 
