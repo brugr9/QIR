@@ -15,14 +15,7 @@ version: 1.10
 using namespace std;
 
 // OpenGL helper includes /////////////////////////////////////////////////////////////////////////
-
-#if defined(__APPLE__) && defined(__MACH__)
-    #include <GLUT/glut.h>
-#else
-    #include <GL/glew.h>
-    #include "lib/OpenGL.h"
-#endif
-// application helper includes ////////////////////////////////////////////////////////////////////
+#include "lib/OpenGL.h"
 #include "lib/UtilGLSL.hpp"
 
 

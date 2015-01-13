@@ -2,20 +2,6 @@
 #include <string>
 #include "lib/OpenGL.h"
 
-/**
- * @brief A field for a menu entry value.
- */
-int MENU_ENTRY = 0;
-
-/**
- * @brief A field for a menu value.
- */
-int MENU_VALUE = 0;
-
-/**
- * @brief A field for a menu name.
- */
-string MENU_NAME;
 
 /**
  * {@inheritDoc}
