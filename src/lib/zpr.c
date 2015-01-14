@@ -1,8 +1,6 @@
 #include "lib/zpr.h"
-// #include "lib/UtilGLUT.hpp"
 
 #include <GL/glut.h>
-
 #include <stdlib.h>
 #include <memory.h>
 #include <math.h>
@@ -38,9 +36,7 @@ static void   pos(double *px,double *py,double *pz,const int x,const int y,const
 static void   getMatrix();
 static void   invertMatrix(const GLdouble *m, GLdouble *out );
 
-/**
-static void zprReshape(int w,int h);
-*/
+// static void zprReshape(int w,int h);
 static void zprMouse(int button, int state, int x, int y);
 static void zprMotion(int x, int y);
 
@@ -53,7 +49,7 @@ void zprInit()
     glutMotionFunc(zprMotion);
 }
 
-/**
+/*
 void zprReshape(int w,int h)
 {
 	glViewport(0,0,w,h);

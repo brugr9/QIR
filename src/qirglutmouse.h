@@ -1,42 +1,35 @@
-#include <string>
+/**
+  * GLUT mouse methods declaration,
+  * adapted for the QIR application.
+  *
+  * @author Roland Bruggmann
+  */
 
 /**
- * @brief A field for a menu entry value.
- */
-int MENU_ENTRY = 0;
-
-/**
- * @brief A field for a menu value.
- */
-int MENU_VALUE = 0;
-
-/**
- * @brief A field for a menu name.
- */
-string MENU_NAME;
-
-/**
- * @brief initMenu
+ * @brief Initialises the mouse menu.
+ * A mouse menu will be attached to the right mouse button.
  */
 void initMenu(void);
 
 /**
- * @brief menu1
- * @param item
+ * @brief A GLUT mouse menu entry callback handler.
+ * @param item The menu item to call.
  */
-void menu1(int item);
+void qirMenu(int item);
 
 /**
- * @brief initMenuChange
+ * @brief A change mouse menu handler.
+ * A helper method for a GLUT mouse menu.
+ *
  * @param entry
- * @param name
+ * @param name A pointer to the name to set.
  * @param value
  */
 void initMenuChange(int entry, char *name, int value);
 
 /**
- * @brief updateMenu
- * @param status
+ * @brief A GLUT update mouse menu callback handler.
+ * @param status GLUT menu related macro definition
  * @param x
  * @param y
  */

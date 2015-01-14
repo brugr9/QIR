@@ -1,44 +1,18 @@
-#ifndef MYGLWIDGET_H
-#define MYGLWIDGET_H
+#ifndef QIRGLWIDGET_H
+#define QIRGLWIDGET_H
 
 #include "qirglutkeyboard.h"
 #include "qirglutmouse.h"
 #include <QGLWidget>
 
-/**
- *
- */
-typedef struct {
-   double x,y,z;
-} XYZ;
-
-/**
- *
- */
-typedef struct {
-   XYZ vp;              /* View position           */
-   XYZ vd;              /* View direction vector   */
-   XYZ vu;              /* View up direction       */
-   XYZ pr;              /* Point to rotate about   */
-   double focallength;  /* Focal Length along vd   */
-   double aperture;     /* Camera aperture         */
-   double eyesep;       /* Eye separation          */
-   int sheight,swidth;  /* screenheight,screenwidth*/
-} CAMERA;
-
-///////////////////////////////////////////////
-// Animation
-void animation(int timer_id);
-void startAnimation(void);
-void stopAnimation(void);
-void fps(void);
-///////////////////////////////////////////////
-
+namespace Qir {
+class QirGLWidget;
+}
 
 /**
  * @brief An OpenGL-Widget for the QIR application.
  */
-class MyGLWidget : public QGLWidget
+class QirGLWidget : public QGLWidget
 {
     Q_OBJECT
 public:
@@ -46,28 +20,107 @@ public:
      * @brief Main constructor.
      * @param parent
      */
-    explicit MyGLWidget(QWidget *parent = 0);
+    explicit QirGLWidget(QWidget *parent = 0);
     /**
      * @brief Destructor.
      */
-    ~MyGLWidget();
+    ~QirGLWidget();
 
+    /**
+     * @brief setH00
+     * @param arg
+     */
     void setH00(double arg);
+    /**
+     * @brief setH01
+     * @param arg
+     */
     void setH01(double arg);
+    /**
+     * @brief setH02
+     * @param arg
+     */
     void setH02(double arg);
-
+    /**
+     * @brief setH10
+     * @param arg
+     */
     void setH10(double arg);
+    /**
+     * @brief setH11
+     * @param arg
+     */
     void setH11(double arg);
+    /**
+     * @brief setH12
+     * @param arg
+     */
     void setH12(double arg);
-
+    /**
+     * @brief setH20
+     * @param arg
+     */
     void setH20(double arg);
+    /**
+     * @brief setH21
+     * @param arg
+     */
     void setH21(double arg);
+    /**
+     * @brief setH22
+     * @param arg
+     */
     void setH22(double arg);
-
+    /**
+     * @brief setH30
+     * @param arg
+     */
     void setH30(double arg);
+    /**
+     * @brief setH31
+     * @param arg
+     */
     void setH31(double arg);
+    /**
+     * @brief setH32
+     * @param arg
+     */
     void setH32(double arg);
+    /**
+     * @brief setH33
+     * @param arg
+     */
     void setH33(double arg);
+    /**
+     * @brief zoomIn
+     */
+    void zoomIn(void);
+    /**
+     * @brief zoomOut
+     */
+    void zoomOut(void);
+    /**
+     * @brief up
+     */
+    void up(void);
+    /**
+     * @brief down
+     */
+    void down(void);
+    /**
+     * @brief left
+     */
+    void left(void);
+    /**
+     * @brief right
+     */
+    void right(void);
+
+    /**
+     * @brief Draws the geometry.
+     * @param type The type of quadric.
+     */
+    void drawGeometry(int type);
 
 signals:
 
@@ -86,6 +139,7 @@ protected:
     void paintGL();
     /**
      * @brief Resizes the widget.
+     *
      * @param width The widget width.
      * @param height The widget height.
      */
@@ -93,18 +147,22 @@ protected:
 
 private:
 
-    void initCamera(int mode);
-    void Normalise(XYZ *p);
-    void CrossProd(XYZ p1, XYZ p2, XYZ *p3);
-    void stereoscope(void);
-
-    // scene
+    /**
+     * @brief drawAxis
+     * @param scale
+     */
     void drawAxis(GLfloat scale);
 
-    // Model
-    void initModel(void);
-    void drawModel(int type);
+    /**
+     * @brief Initialises the geometry.
+     */
+    void initGeometry(void);
+
+    /**
+     * @brief draw
+     */
+    void draw(void);
 
 };
 
-#endif // MYGLWIDGET_H
+#endif // QIRGLWIDGET_H

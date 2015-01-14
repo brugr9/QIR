@@ -4,10 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include <sstream> // fps
 #include <fstream>
 #include <string>
-#include <cmath> // stereo
 using namespace std;
 
 // OpenGL helper includes
@@ -28,346 +26,189 @@ using namespace std;
 #include <glm/gtc/constants.hpp> // initializeGL
 using namespace glm;
 
-// global defines
-int ARGC = 0;
-char** ARGV = 0;
-_GLUfuncptr errorCallback;
-
-// R-G-B-A
-const GLfloat RED[] = { 1.0, 0.0, 0.0, 1.0 };
-const GLfloat GREEN[] = { 0.0, 1.0, 0.0, 1.0 };
-const GLfloat BLUE[] = { 0.0, 0.0, 1.0, 1.0 };
-const GLfloat WHITE[] = { 1.0, 1.0, 1.0, 1.0 };
-// C-M-Y-A
-const GLfloat CYAN[] = { 0.0, 1.0, 1.0, 1.0 };
-const GLfloat MAGENTA[] = { 1.0, 0.0, 1.0, 1.0 };
-const GLfloat YELLOW[] = { 1.0, 1.0, 0.0, 1.0 };
-const GLfloat BLACK[] = { 0.0, 0.0, 0.0, 1.0 };
-//
-const GLfloat GREY[] = { 0.41, 0.49, 0.57, 1.0 };
-// BFH
-const GLfloat BFHGREY[] = { 0.41, 0.49, 0.57, 1.0 };
-const GLfloat BFHYELLOW[] = { 0.741, 0.494, 0.0, 1.0 };
-
-// Quadrik (qobj)
-int qType = 0;
-const int QTYPE_CENTRIC = 0;
-const int QTYPE_PARABOLIC = 1;
-const int QTYPE_CONIC = 2;
-const int QTYPE_TEEINE = 3;
-
-GLuint startList;
-const GLuint NUMBER_OF_FIGURES = 4;
-const GLuint NUMBER_OF_ENTRIES_PER_FIGURE = 3;
-bool BOUNDING_BOX = false;
-
-// Koeffizientenmatrize Q
-mat4 coefficientsMat4 = mat4( //
-        0.0f, 0.0f, 0.0f, 0.0f, // col 1
-        0.0f, 0.0f, 0.0f, 0.0f, // col 2
-        0.0f, 0.0f, 0.0f, 0.0f, // col 3
-        0.0f, 0.0f, 0.0f, 0.0f  // col 4
-        );
-// Projektive Transformation H
-mat4 homographyMat4(0.0);
-// Koeffizientenmatrize Q'
-mat4 coefficientsAbbMat4 = mat4(  //
-        0.0f, 0.0f, 0.0f, 0.0f, // col 1
-        0.0f, 0.0f, 0.0f, 0.0f, // col 2
-        0.0f, 0.0f, 0.0f, 0.0f, // col 3
-        0.0f, 0.0f, 0.0f, 0.0f  // col 4
-        );
-// Gemischt-quadratische Koordinatengleichung mit Koeffizienten aus Q'
-string equation;
-
-// Navigation
-bool AXIS_DRAW = true;
-GLuint zoom = 5; // [1,9]
-
-// Projektion
-const int PTYPE_ORTHOGRAPHIC = 0;
-const int PTYPE_PERSPECTIVIC = 1;
-bool PERSPECTIVE_DRAW = false;
-bool STEREOSCOPE_DRAW = false;
-bool WIREFRAME_MODE = false;
-CAMERA camera; // stereo
-
-// Animation
-bool ANIMATION_RUNNING = false;
-int ANIMATION_SPEED = 30;
-
-/**
- * Animation, simply rotates the scene (y-axis).
- *
- * @param timer_id Timer ID used for GLUT timer function.
- */
-void animation(int timer_id) {
-    glRotatef(1.0, 0.0, 0.0, 1.0);
-// redraw the scene
-    glutPostRedisplay();
-// reset timer if the animation is running
-    if (ANIMATION_RUNNING)
-        glutTimerFunc(ANIMATION_SPEED, animation, 0);
-}
-
-/**
- * Starts the animation.
- */
-void startAnimation(void) {
-    ANIMATION_RUNNING = true;
-    glutTimerFunc(ANIMATION_SPEED, animation, 0);
-
-}
-
-/**
- * Stops the animation.
- */
-void stopAnimation(void) {
-    ANIMATION_RUNNING = false;
-    glutIdleFunc(NULL);
-}
-
-/**
- * Frames per second.
- */
-void fps(void) {
-
-// calculate frames per second (FPS)
-    static int frame = 0;
-    static int time = 0;
-    static int timebase = 0;
-    stringstream fps;
-
-    frame++;
-    time = glutGet(GLUT_ELAPSED_TIME);
-    if (time - timebase > 1000) {
-        fps.setf(std::ios::fixed, std::ios::floatfield);
-        fps.precision(2);
-        fps << "FPS: " << frame * 1000.0 / (time - timebase);
-        glutSetWindowTitle((fps.str()).c_str());
-        timebase = time;
-        frame = 0;
-    }
-}
-
 /**
  * {@inheritDoc}
  */
-MyGLWidget::MyGLWidget(QWidget *parent)
+QirGLWidget::QirGLWidget(QWidget *parent)
     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
 
-// nice grids
+    /// /////////////////////////////
+    /// nice grids
+    /// /////////////////////////////
     glPolygonOffset(1, 1);
     glEnable(GL_POLYGON_OFFSET_FILL);
 
-// register callbacks
-    //glutDisplayFunc(paintGL);
+    /// /////////////////////////////
+    /// keyboard and mouse
+    /// /////////////////////////////
+    // register callbacks
     glutKeyboardFunc(keyboard);
     glutSpecialFunc(specialkey);
     glutMenuStatusFunc(updateMenu);
-    //glutReshapeFunc(resizeGL);
-
-// init application
+    // init applications
     zprInit();
     initMenu();
-    initializeGL();
+
+    /// /////////////////////////////
+    /// camera
+    /// /////////////////////////////
     initCamera(3);
 
-    // UtilGLSL::checkOpenGLErrorCode();
+    UtilGLSL::checkOpenGLErrorCode();
 
 }
 
 /**
  * {@inheritDoc}
  */
-MyGLWidget::~MyGLWidget()
+QirGLWidget::~QirGLWidget()
 {
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH00(double arg){
+void QirGLWidget::setH00(double arg){
     homographyMat4[0][0] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH01(double arg){
+void QirGLWidget::setH01(double arg){
     homographyMat4[0][1] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH02(double arg){
+void QirGLWidget::setH02(double arg){
     homographyMat4[0][2] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH10(double arg){
+void QirGLWidget::setH10(double arg){
     homographyMat4[1][0] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH11(double arg){
+void QirGLWidget::setH11(double arg){
     homographyMat4[1][1] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH12(double arg){
+void QirGLWidget::setH12(double arg){
     homographyMat4[1][2] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH20(double arg){
+void QirGLWidget::setH20(double arg){
     homographyMat4[2][0] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH21(double arg){
+void QirGLWidget::setH21(double arg){
     homographyMat4[2][1] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH22(double arg){
+void QirGLWidget::setH22(double arg){
     homographyMat4[2][2] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH30(double arg){
+void QirGLWidget::setH30(double arg){
     homographyMat4[3][0] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH31(double arg){
+void QirGLWidget::setH31(double arg){
     homographyMat4[3][1] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH32(double arg){
+void QirGLWidget::setH32(double arg){
     homographyMat4[3][2] = arg;
 }
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::setH33(double arg){
+void QirGLWidget::setH33(double arg){
     homographyMat4[3][3] = arg;
 }
 
-
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::stereoscope(void) {
-
-    static double matrix[16];
-    XYZ eyesep, focus;
-
-    // Determine the focal point
-    Normalise(&camera.vd);
-    focus.x = camera.vp.x + camera.focallength * camera.vd.x;
-    focus.y = camera.vp.y + camera.focallength * camera.vd.y;
-    focus.z = camera.vp.z + camera.focallength * camera.vd.z;
-
-    // Derive the separation vector for eye separation
-    CrossProd(camera.vd, camera.vu, &eyesep);
-    Normalise(&eyesep);
-    eyesep.x *= camera.eyesep / 2.0;
-    eyesep.y *= camera.eyesep / 2.0;
-    eyesep.z *= camera.eyesep / 2.0;
-
-    // Set the back buffer for writing
-    glDrawBuffer(GL_BACK);
-
-    // Clear things
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // Set projection
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(camera.aperture, camera.swidth / (double) camera.sheight,
-            0.1, 1000.0);
-
-    glViewport(0, 0, camera.swidth, camera.sheight);
-
-    // store zpr transformation matrix
-    glGetDoublev(GL_MODELVIEW_MATRIX, matrix);
-
-    // left eye stereo image
-    // Clear depth buffer for left eye image
-    glClear(GL_DEPTH_BUFFER_BIT);
-    // Left eye filter for RED-green/or/blue glasses
-    glColorMask(GL_TRUE, GL_FALSE, GL_FALSE, GL_TRUE);
-    // Create the model
-    glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-    glLoadIdentity();
-    gluLookAt(camera.vp.x - eyesep.x, camera.vp.y - eyesep.y,
-            camera.vp.z - eyesep.z, focus.x, focus.y, focus.z, camera.vu.x,
-            camera.vu.y, camera.vu.z);
-    glTranslatef(0.0, 0.0, 0.02f);
-    glMultMatrixd(matrix);
-    if (AXIS_DRAW) {
-        drawAxis(1.2);
-    }
-    drawModel(qType);
-    glPopMatrix();
-    glFlush();
-
-    // right eye stereo image
-    // Clear depth buffer for right eye image
-    glClear(GL_DEPTH_BUFFER_BIT);
-    // Right eye filter for red-GREEN glasses
-    glColorMask(GL_FALSE, GL_TRUE, GL_FALSE, GL_TRUE);
-    // Right eye filter for red-BLUE glasses
-    // glColorMask(GL_FALSE,GL_FALSE,GL_TRUE,GL_TRUE);
-    // Create the model
-    glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-    glLoadIdentity();
-    gluLookAt(camera.vp.x + eyesep.x, camera.vp.y + eyesep.y,
-            camera.vp.z + eyesep.z, focus.x, focus.y, focus.z, camera.vu.x,
-            camera.vu.y, camera.vu.z);
-    glTranslatef(0.0, 0.0, 0.02f);
-    glMultMatrixd(matrix);
-    if (AXIS_DRAW) {
-        drawAxis(1.2);
-    }
-    drawModel(qType);
-    glPopMatrix();
-    glFlush();
-
-    //done
-    glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+void QirGLWidget::zoomIn(){
+    glScalef(1.02, 1.02, 1.02);
+    glutPostRedisplay();
 }
 
+/**
+ * {@inheritDoc}
+ */
+void QirGLWidget::zoomOut(){
+    glScalef(0.98, 0.98, 0.98);
+    glutPostRedisplay();
+}
 
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::initializeGL()
+void QirGLWidget::up(){
+    glRotatef(-1.0, 1.0, 0.0, 0.0);
+    glutPostRedisplay();
+}
+
+/**
+ * {@inheritDoc}
+ */
+void QirGLWidget::down(){
+    glRotatef(1.0, 1.0, 0.0, 0.0);
+    glutPostRedisplay();
+}
+
+/**
+ * {@inheritDoc}
+ */
+void QirGLWidget::left(){
+    glRotatef(-1.0, 0.0, 1.0, 0.0);
+    glutPostRedisplay();
+}
+
+/**
+ * {@inheritDoc}
+ */
+void QirGLWidget::right(){
+    glRotatef(1.0, 0.0, 1.0, 0.0);
+    glutPostRedisplay();
+}
+
+/**
+ * {@inheritDoc}
+ */
+void QirGLWidget::initializeGL()
 {
     // background color
     //glClearColor(BLACK[0], BLACK[1], BLACK[2], BLACK[3]); // white
@@ -455,7 +296,7 @@ void MyGLWidget::initializeGL()
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::paintGL()
+void QirGLWidget::paintGL()
 {
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -543,7 +384,7 @@ void resizeInstanced(int width, int height) {
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::resizeGL(int width, int height)
+void QirGLWidget::resizeGL(int width, int height)
 {
 
     camera.swidth = width;
@@ -581,7 +422,7 @@ void MyGLWidget::resizeGL(int width, int height)
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::drawAxis(GLfloat scale) {
+void QirGLWidget::drawAxis(GLfloat scale) {
 
     // Bodengitter
     glColor4fv(GREY);
@@ -676,7 +517,7 @@ void MyGLWidget::drawAxis(GLfloat scale) {
  * coordinates
  *
  */
-void MyGLWidget::initModel(void) {
+void QirGLWidget::initGeometry(void) {
 
     /**
      * Create display lists,
@@ -805,7 +646,7 @@ void MyGLWidget::initModel(void) {
 /**
  * {@inheritDoc}
  */
-void MyGLWidget::drawModel(int type) {
+void QirGLWidget::drawGeometry(int type) {
 
     GLuint offset = NUMBER_OF_ENTRIES_PER_FIGURE * type;
 
@@ -829,79 +670,4 @@ void MyGLWidget::drawModel(int type) {
     glColor3f(0.0, 0.0, 0.0); // black
     glCallList(startList + ++offset);
 
-}
-
-/**
- * Move the camera to the home position
- * Or to a predefined stereo configuration
- * The model is assumed to be in a 10x10x10 cube
- * Centered at the origin
- *
- * @param mode
- */
-void MyGLWidget::initCamera(int mode) {
-    camera.aperture = 60;
-    camera.pr.x = 0.0;
-    camera.pr.y = 0.0;
-    camera.pr.z = 0.0;
-
-    camera.vd.x = 0;
-    camera.vd.y = 0;
-    camera.vd.z = -1;
-
-    camera.vu.x = 0;
-    camera.vu.y = 1;
-    camera.vu.z = 0;
-
-    camera.vp.x = 0;
-    camera.vp.y = 0;
-    camera.vp.z = 10;
-
-    switch (mode) {
-    case 0:
-    case 2:
-    case 4:
-        camera.focallength = 10;
-        break;
-    case 1:
-        camera.focallength = 5;
-        break;
-    case 3:
-        camera.focallength = 15;
-        break;
-    }
-
-    // Non stressful stereo setting
-    camera.eyesep = camera.focallength / 30.0;
-    if (mode == 4)
-        camera.eyesep = 0;
-}
-
-/**
- * Normalizes a given vector.
- * @param p Pointer to vector
- */
-void MyGLWidget::Normalise(XYZ *p) {
-    double length;
-
-    length = sqrt(p->x * p->x + p->y * p->y + p->z * p->z);
-    if (length != 0) {
-        p->x /= length;
-        p->y /= length;
-        p->z /= length;
-    } else {
-        p->x = 0;
-        p->y = 0;
-        p->z = 0;
-    }
-}
-
-
-/**
- * {@inheritDoc}
- */
-void MyGLWidget::CrossProd(XYZ p1, XYZ p2, XYZ *p3) {
-    p3->x = p1.y * p2.z - p1.z * p2.y;
-    p3->y = p1.z * p2.x - p1.x * p2.z;
-    p3->z = p1.x * p2.y - p1.y * p2.x;
 }

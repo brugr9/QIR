@@ -157,7 +157,7 @@ private slots:
     //////////////////////////////////////////////////
 
     /**
-      * @brief Zoom-Slider geändert.
+      * @brief Zoom-Slider changed.
      * @param value Zoom-Wert, der angezeigt werden soll.
      */
     void on_verticalSlider_zoom_valueChanged(int value);
@@ -218,10 +218,21 @@ private:
     /**
      * @brief A field for a MyGLWidget.
      */
-    MyGLWidget myGLWidget;
+    Qir::QirGLWidget *qirGLWidget;
+
+    /**
+     * @brief A field for an equation.
+     * Gemischt-quadratische Koordinatengleichung der Abbildung mit
+     * Koeffizienten aus der Koeffizientenmatrize der Abbildung.
+     */
+    QString equation;
+
+    int zoom;
+
 
     /**
      * @brief Werte der Koeffizientenmatrize setzen.
+     *
      * @param a Koeffizient a
      * @param b Koeffizient b
      * @param c Koeffizient c
@@ -233,10 +244,15 @@ private:
      * @param r Koeffizient r
      * @param d Koeffizient d
      */
-    void setCoefficients(double a, double b, double c, double f, double g, double h, double p, double q, double r, double d);
+    void setCoefficients(//
+                         double a, double b, double c, // quadratic coefficients
+                         double f, double g, double h, // doubled linear coefficients
+                         double p, double q, double r, // single linear coefficients
+                         double d); // constant coefficient
 
     /**
      * @brief Werte der Kollineationsmatrize setzen.
+     *
      * @param h11
      * @param h12
      * @param h13

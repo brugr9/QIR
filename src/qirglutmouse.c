@@ -1,6 +1,30 @@
+/**
+ * GLUT mouse methods implementation,
+ * adapted for the QIR application.
+ *
+ * @author Roland Bruggmann
+ */
+
 #include "qirglutmouse.h"
+#include "qirmodel.h"
+
 #include <string>
 #include "lib/OpenGL.h"
+
+/**
+ * @brief A field for a mouse menu entry value.
+ */
+int MENU_ENTRY = 0;
+
+/**
+ * @brief A field for a mouse menu value.
+ */
+int MENU_VALUE = 0;
+
+/**
+ * @brief A field for a mouse menu name.
+ */
+string MENU_NAME;
 
 
 /**
@@ -9,22 +33,10 @@
 void initMenu() {
 
     // create menu
-    glutCreateMenu(menu1);
-    glutAddMenuEntry("Mittelpunktsquadrik", 1);
-    glutAddMenuEntry("Kegeliger Typ", 2);
-    glutAddMenuEntry("Parabolischer Typ", 3);
-    glutAddMenuEntry("Teeiger Typ", 4); // TODO
-    glutAddMenuEntry("-----------------------------", 5);
-    glutAddMenuEntry("Orientierung aus", 6);
-    glutAddMenuEntry("Bounding-Box an", 7);
-    glutAddMenuEntry("Drahtgitter-Modus an", 8);
-    glutAddMenuEntry("-----------------------------", 9);
-    glutAddMenuEntry("Perspektivische Projektion", 10); // Projektion: ortho, perspectivic
-    glutAddMenuEntry("Stereobildwidergabe an", 11);
-    glutAddMenuEntry("-----------------------------", 12);
-    glutAddMenuEntry("Animation starten", 13);
-    glutAddMenuEntry("-----------------------------", 14);
-    glutAddMenuEntry("Programm beenden", 0);
+    glutCreateMenu(qirMenu);
+    glutAddMenuEntry("Orientierung aus", 1);
+    glutAddMenuEntry("Bounding-Box an", 2);
+    glutAddMenuEntry("Drahtgitter-Modus an", 3);
 
     // attach menu to right mouse button
     glutAttachMenu(GLUT_RIGHT_BUTTON);
@@ -33,13 +45,9 @@ void initMenu() {
 /**
  * {@inheritDoc}
  */
-void menu1(int item) {
+void qirMenu(int item) {
 
     switch (item) {
-    case 0: {
-        exit(0);
-        break;
-    }
     case 1: {
         qType = QTYPE_CENTRIC;
         break;
@@ -120,18 +128,7 @@ void menu1(int item) {
         // --
         break;
     }
-    case 13: {
-        if (ANIMATION_RUNNING) {
-            initMenuChange(13, "Animation starten", 13);
-            stopAnimation();
-        } else {
-            initMenuChange(13, "Animation stoppen", 13);
-            startAnimation();
-        }
-        break;
-    }
-    case 14: {
-        // --
+
         break;
     }
     default: {
@@ -151,11 +148,7 @@ void initMenuChange(int entry, char *name, int value) {
 }
 
 /**
- * Helper method.
- *
- * @param status
- * @param x
- * @param y
+ * {@inheritDoc}
  */
 void updateMenu(int status, int x, int y) {
     if (status == GLUT_MENU_NOT_IN_USE) {

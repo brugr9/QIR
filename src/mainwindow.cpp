@@ -8,7 +8,7 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    myGLWidget(parent)
+    qirGLWidget(parent)
 {
     ui->setupUi(this);
 }
@@ -165,7 +165,7 @@ void MainWindow::on_actionInfo_triggered()
  */
 void MainWindow::on_doubleSpinBox_11_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH00(arg1);
+    ui->qirGLWidget->setH00(arg1);
     this->updateEquation();
 }
 
@@ -174,7 +174,7 @@ void MainWindow::on_doubleSpinBox_11_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_12_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH01(arg1);
+    ui->qirGLWidget->setH01(arg1);
     this->updateEquation();
 }
 
@@ -183,7 +183,7 @@ void MainWindow::on_doubleSpinBox_12_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_13_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH02(arg1);
+    ui->qirGLWidget->setH02(arg1);
     this->updateEquation();
 }
 
@@ -192,7 +192,7 @@ void MainWindow::on_doubleSpinBox_13_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_21_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH10(arg1);
+    ui->qirGLWidget->setH10(arg1);
     this->updateEquation();
 }
 
@@ -201,7 +201,7 @@ void MainWindow::on_doubleSpinBox_21_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_22_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH11(arg1);
+    ui->qirGLWidget->setH11(arg1);
     this->updateEquation();
 }
 
@@ -210,7 +210,7 @@ void MainWindow::on_doubleSpinBox_22_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_23_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH12(arg1);
+    ui->qirGLWidget->setH12(arg1);
     this->updateEquation();
 }
 
@@ -219,7 +219,7 @@ void MainWindow::on_doubleSpinBox_23_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_31_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH20(arg1);
+    ui->qirGLWidget->setH20(arg1);
     this->updateEquation();
 }
 
@@ -228,7 +228,7 @@ void MainWindow::on_doubleSpinBox_31_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_32_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH21(arg1);
+    ui->qirGLWidget->setH21(arg1);
     this->updateEquation();
 }
 
@@ -237,7 +237,7 @@ void MainWindow::on_doubleSpinBox_32_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_33_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH22(arg1);
+    ui->qirGLWidget->setH22(arg1);
     this->updateEquation();
 }
 
@@ -246,7 +246,7 @@ void MainWindow::on_doubleSpinBox_33_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_41_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH30(arg1);
+    ui->qirGLWidget->setH30(arg1);
     this->updateEquation();
 }
 
@@ -255,7 +255,7 @@ void MainWindow::on_doubleSpinBox_41_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_42_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH31(arg1);
+    ui->qirGLWidget->setH31(arg1);
     this->updateEquation();
 }
 
@@ -264,7 +264,7 @@ void MainWindow::on_doubleSpinBox_42_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_43_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH32(arg1);
+    ui->qirGLWidget->setH32(arg1);
     this->updateEquation();
 }
 
@@ -273,7 +273,7 @@ void MainWindow::on_doubleSpinBox_43_valueChanged(double arg1)
  */
 void MainWindow::on_doubleSpinBox_44_valueChanged(double arg1)
 {
-    ui->myGLWidget->setH33(arg1);
+    ui->qirGLWidget->setH33(arg1);
     this->updateEquation();
 }
 
@@ -286,7 +286,12 @@ void MainWindow::on_doubleSpinBox_44_valueChanged(double arg1)
  */
 void MainWindow::on_verticalSlider_zoom_valueChanged(int value)
 {
-
+    if (this->zoom < value) {
+        ui->qirGLWidget->zoomOut();
+    } else {
+        ui->qirGLWidget->zoomIn();
+    }
+    this->zoom = value;
 }
 
 /**
@@ -371,62 +376,60 @@ void MainWindow::setCoefficients(//
  */
 void MainWindow::updateEquation(void)
 {
-    /**
-    QString equ;
-    CQuadric *q = &ui->myGLWidget->quadric;
-
+    QString e = "NAN";
+/*
     if (q->getA() != 0.0f) {
-        //equ.append(q->getA());
-        equ.append("x<sup>2</sup>");
+        //e.append(q->getA());
+        e.append("x<sup>2</sup>");
     }
     if (q->getB() != 0.0f) {
-        //equ.append(q->getB());
-        equ.append(" + y<sup>2</sup>");
+        //e.append(q->getB());
+        e.append(" + y<sup>2</sup>");
     }
     if (q->getC() != 0.0f) {
-        //equ.append(q->getC());
-        equ.append(" + z<sup>2</sup>");
+        //e.append(q->getC());
+        e.append(" + z<sup>2</sup>");
     }
     if (q->getF() != 0.0f) {
-        //equ.append(q->getF() * 2);
-        equ.append(" + yz");
+        //e.append(q->getF() * 2);
+        e.append(" + yz");
     }
     if (q->getG() != 0.0f) {
-        //equ.append(q->getG() * 2);
-        equ.append(" + zx");
+        //e.append(q->getG() * 2);
+        e.append(" + zx");
     }
     if (q->getH() != 0.0f) {
-        //equ.append(q->getH() * 2);
-        equ.append(" + xy");
+        //e.append(q->getH() * 2);
+        e.append(" + xy");
     }
     if (q->getP() != 0.0f) {
-        //equ.append(q->getP());
-        equ.append(" + x");
+        //e.append(q->getP());
+        e.append(" + x");
     }
     if (q->getQ() != 0.0f) {
-        //equ.append(q->getQ());
-        equ.append(" + y");
+        //e.append(q->getQ());
+        e.append(" + y");
     }
     if (q->getR() != 0.0f) {
-        //equ.append(q->getR());
-        equ.append(" + z");
+        //e.append(q->getR());
+        e.append(" + z");
     }
     if (q->getD() != 0.0f) {
-        //equ.append(q->getD());
-        equ.append(" + d");
+        //e.append(q->getD());
+        e.append(" + d");
     }
-    if (equ.isEmpty() || (q->getA() == 0 & q->getB() == 0 & q->getC() == 0)) {
-        equ.clear();
-        equ.append("NaN");
+    if (e.isEmpty() || (q->getA() == 0 & q->getB() == 0 & q->getC() == 0)) {
+        e.clear();
+        e.append("NaN");
     } else {
-        equ.append(" = 0");
-        if (equ.startsWith(" ")) {
-            equ.remove(0,3);
+        e.append(" = 0");
+        if (e.startsWith(" ")) {
+            e.remove(0,3);
         }
     }
+*/
+    ui->equation->setText(e);
 
-    ui->equation->setText(equ);
-    */
 }
 /**
  * {@inheritDoc}

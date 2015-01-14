@@ -14,7 +14,7 @@ LIBS     += \
       -lGL \
       -lglut
 
-INCLUDEPATH += \
+# INCLUDEPATH += \
 #        /usr/include/c++/4.8 \
 #        /usr/include/c++/4.8/bits \
 #        /usr/include/x86_64-linux-gnu \
@@ -23,16 +23,17 @@ INCLUDEPATH += \
 # Input
 HEADERS += \
       lib/OpenGL.h \
-      lib/UtilGLSL.hpp \
       lib/UtilGLUT.hpp \
+      lib/UtilGLSL.hpp \
       lib/zpr.h \
       qirmodel.h \
-      qirglwidget.h \
+      qirglperspective.h \
+      qirglutanimation.h \
       qirglutkeyboard.h \
       qirglutmouse.h \
-      mainwindow.h \
-      aboutwindow.h
-
+      qirglwidget.h \
+      aboutwindow.h \
+      mainwindow.h
 
 FORMS += \
       aboutwindow.ui \
@@ -43,12 +44,14 @@ SOURCES += \
       lib/UtilGLUT.cpp \
       lib/zpr.c \
       qirmodel.c \
+      qirglperspective.c \
+      qirglutanimation.c \
       qirglutkeyboard.c \
       qirglutmouse.c \
-      main.cpp \
-      mainwindow.cpp \
       qirglwidget.cpp \
       aboutwindow.cpp \
+      mainwindow.cpp \
+      main.cpp \
       # glsl/qir.vert \
       # glsl/qir.frag
 

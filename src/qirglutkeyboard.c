@@ -1,4 +1,12 @@
+/**
+ * GLUT keyboard methods implementation,
+ * adapted for the QIR application.
+ *
+ * @author Roland Bruggmann
+ */
+
 #include "qirglutkeyboard.h"
+#include "qirglutanimation.h"
 #include "lib/OpenGL.h"
 
 /**
@@ -7,12 +15,8 @@
 void keyboard(unsigned char key, int x, int y) {
 
     switch (key) {
-    case 27: {
-        exit(0);
-        break;
-    }
     case ' ': {
-        menu1(13);
+        handleAnimation();
         break;
     }
     default: {

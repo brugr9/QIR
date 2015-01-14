@@ -1,17 +1,22 @@
-
+/**
+ * GLUT keyboard methods declaration.
+ *
+ * @author Roland Bruggmann
+ */
 
 /**
- * @brief Called when a key got pressed.
- * @param key
+ * @brief A GLUT keyboard callback method.
+ *
+ * @param key The key pressed.
  * @param x
  * @param y
  */
 void keyboard(unsigned char key, int x, int y);
 
 /**
- * @brief Called when a special-key got pressed.
+ * @brief A GLUT specialkey callback method.
  *
- * @param key
+ * @param key The key pressed.
  * @param x
  * @param y
  */

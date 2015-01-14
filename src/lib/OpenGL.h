@@ -9,5 +9,7 @@
     #include <GL/glut.h>
     #include <GL/freeglut_ext.h>
 #endif
+// #include <GL/gl.h>
+// #include <GL/glu.h>
 
 #endif // OPENGL_H

@@ -6,7 +6,8 @@
 #include "mainwindow.h"
 #include <QApplication>
 
-GLint PROGRAM_ID = 0;
+//
+#include "qirmodel.h"
 
 /**
   * Hauptmethode: initialisiert GLUT, lädt die Shader-Programme, initialisiert
@@ -20,22 +21,20 @@ GLint PROGRAM_ID = 0;
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
+    /*
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
     glutInitContextVersion(4, 2);
     glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
+    */
 
     // load shader programs
-    //*/
-     if (argc > 1) {
-            PROGRAM_ID = UtilGLSL::initShaderProgram(argc, argv);
-     } else {
-            argc = 3;
-            argv[0] = "";
-            argv[1] = "glsl/qir.vert";
-            argv[2] = "glsl/qir.frag";
-            PROGRAM_ID = UtilGLSL::initShaderProgram(argc, argv);
-     }
-     //*/
+    /*
+    argc = 3;
+    argv[0] = "";
+    argv[1] = "glsl/qir.vert";
+    argv[2] = "glsl/qir.frag";
+    PROGRAM_ID = UtilGLSL::initShaderProgram(argc, argv);
+    */
 
     QApplication app(argc, argv);
 
