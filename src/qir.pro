@@ -9,7 +9,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TEMPLATE = app
 TARGET = QIR
 
-LIBS     += \
+LIBS += \
       -lGLU \
       -lGL \
       -lglut
@@ -23,14 +23,14 @@ LIBS     += \
 # Input
 HEADERS += \
       lib/OpenGL.h \
-      lib/UtilGLUT.hpp \
-      lib/UtilGLSL.hpp \
-      lib/zpr.h \
-      qirmodel.h \
-      qirglperspective.h \
-      qirglutanimation.h \
-      qirglutkeyboard.h \
-      qirglutmouse.h \
+      #lib/UtilGLUT.hpp \
+      #lib/UtilGLSL.hpp \
+      #lib/zpr.h \
+      #qirmodel.h \
+      #qirglperspective.h \
+      #qirglutanimation.h \
+      #qirglutkeyboard.h \
+      #qirglutmouse.h \
       qirglwidget.h \
       aboutwindow.h \
       mainwindow.h
@@ -40,14 +40,14 @@ FORMS += \
       mainwindow.ui
 
 SOURCES += \
-      lib/UtilGLSL.cpp \
-      lib/UtilGLUT.cpp \
-      lib/zpr.c \
-      qirmodel.c \
-      qirglperspective.c \
-      qirglutanimation.c \
-      qirglutkeyboard.c \
-      qirglutmouse.c \
+      #lib/UtilGLSL.cpp \
+      #lib/UtilGLUT.cpp \
+      #lib/zpr.c \
+      #qirmodel.c \
+      #qirglperspective.c \
+      #qirglutanimation.c \
+      #qirglutkeyboard.c \
+      #qirglutmouse.c \
       qirglwidget.cpp \
       aboutwindow.cpp \
       mainwindow.cpp \

@@ -1,6 +1,6 @@
 // OpenGL helper includes
 #include "lib/OpenGL.h"
-#include "lib/UtilGLSL.hpp"
+// #include "lib/UtilGLSL.hpp"
 
 // Qt includes
 #include "mainwindow.h"

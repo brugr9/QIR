@@ -1,9 +1,17 @@
 #ifndef QIRGLWIDGET_H
 #define QIRGLWIDGET_H
 
-#include "qirglutkeyboard.h"
-#include "qirglutmouse.h"
+// #include "qirglutkeyboard.h"
+// #include "qirglutmouse.h"
 #include <QGLWidget>
+
+// GLM
+// #define GLM_FORCE_RADIANS
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp> // initializeGL
+#include <glm/gtc/type_ptr.hpp> // initializeGL
+#include <glm/gtc/constants.hpp> // initializeGL
+using namespace glm;
 
 namespace Qir {
 class QirGLWidget;
@@ -147,6 +155,8 @@ protected:
 
 private:
 
+    mat4 matCollineation;
+
     /**
      * @brief drawAxis
      * @param scale
@@ -155,6 +165,21 @@ private:
 
     /**
      * @brief Initialises the geometry.
+     *
+     *
+     * Quadrics (see Redbook v1.1).
+     *
+     *
+     * Specify the rendering attributes for the object
+     * - Use gluQuadricOrientation() to differentiate the
+     * interior from the exterior
+     * - Use gluQuadricDrawStyle() to render as points,
+     * lines or filled polygons
+     * - Use gluQuadricNormal() to specify how surface
+     * normals should be generated
+     * - Use gluQuadricTexture() to generate texture
+     * coordinates
+     *
      */
     void initGeometry(void);
 

@@ -218,7 +218,7 @@ private:
     /**
      * @brief A field for a MyGLWidget.
      */
-    Qir::QirGLWidget *qirGLWidget;
+    Qir::QirGLWidget qirGLWidget;
 
     /**
      * @brief A field for an equation.
