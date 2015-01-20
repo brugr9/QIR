@@ -116,7 +116,7 @@
               <enum>QLayout::SetFixedSize</enum>
              </property>
              <item row="0" column="0">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_00">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -150,7 +150,7 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_01">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -184,7 +184,7 @@
               </widget>
              </item>
              <item row="0" column="2">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_02">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -218,7 +218,7 @@
               </widget>
              </item>
              <item row="0" column="3">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_03">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -255,7 +255,7 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_21">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -292,7 +292,7 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_22">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -326,7 +326,7 @@
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_23">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -360,7 +360,7 @@
               </widget>
              </item>
              <item row="1" column="3">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_24">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -397,7 +397,7 @@
               </widget>
              </item>
              <item row="2" column="0">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_31">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_20">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -434,7 +434,7 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_32">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_21">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -471,7 +471,7 @@
               </widget>
              </item>
              <item row="2" column="2">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_33">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_22">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -505,7 +505,7 @@
               </widget>
              </item>
              <item row="2" column="3">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_34">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_23">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -542,7 +542,7 @@
               </widget>
              </item>
              <item row="3" column="0">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_41">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_30">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -579,7 +579,7 @@
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_42">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_31">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -616,7 +616,7 @@
               </widget>
              </item>
              <item row="3" column="2">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_43">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_32">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -653,7 +653,7 @@
               </widget>
              </item>
              <item row="3" column="3">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_44">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_33">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -965,7 +965,7 @@
     </property>
     <widget class="QMenu" name="menuNormalform_2">
      <property name="title">
-      <string>Gruppiert nach Normalform</string>
+      <string>Normalform</string>
      </property>
      <addaction name="actionMittelpunktsquadrik"/>
      <addaction name="actionKegeliger_Typ"/>
@@ -973,7 +973,7 @@
     </widget>
     <widget class="QMenu" name="menuNicht_degenerierte_Quadrik">
      <property name="title">
-      <string>Gruppiert nach Kegelschnitt</string>
+      <string>Parametrisiert</string>
      </property>
      <addaction name="actionEllipsoid"/>
      <addaction name="separator"/>
@@ -1079,22 +1079,44 @@
    <extends>QWidget</extends>
    <header>qirglwidget.h</header>
    <container>1</container>
+   <slots>
+    <slot>zoom(int)</slot>
+    <slot>up(void)</slot>
+    <slot>down(void)</slot>
+    <slot>left(void)</slot>
+    <slot>right(void)</slot>
+    <slot>setH00(double)</slot>
+    <slot>setH01(double)</slot>
+    <slot>setH02(double)</slot>
+    <slot>setH10(double)</slot>
+    <slot>setH11(double)</slot>
+    <slot>setH12(double)</slot>
+    <slot>setH20(double)</slot>
+    <slot>setH21(double)</slot>
+    <slot>setH22(double)</slot>
+    <slot>setH30(double)</slot>
+    <slot>setH31(double)</slot>
+    <slot>setH32(double)</slot>
+    <slot>setH33(double)</slot>
+    <slot>setPerspectivicProjection(bool)</slot>
+    <slot>setStereoscope(bool)</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <tabstops>
+  <tabstop>doubleSpinBox_00</tabstop>
+  <tabstop>doubleSpinBox_10</tabstop>
+  <tabstop>doubleSpinBox_20</tabstop>
+  <tabstop>doubleSpinBox_30</tabstop>
+  <tabstop>doubleSpinBox_01</tabstop>
   <tabstop>doubleSpinBox_11</tabstop>
   <tabstop>doubleSpinBox_21</tabstop>
   <tabstop>doubleSpinBox_31</tabstop>
-  <tabstop>doubleSpinBox_41</tabstop>
+  <tabstop>doubleSpinBox_02</tabstop>
   <tabstop>doubleSpinBox_12</tabstop>
   <tabstop>doubleSpinBox_22</tabstop>
   <tabstop>doubleSpinBox_32</tabstop>
-  <tabstop>doubleSpinBox_42</tabstop>
-  <tabstop>doubleSpinBox_13</tabstop>
-  <tabstop>doubleSpinBox_23</tabstop>
   <tabstop>doubleSpinBox_33</tabstop>
-  <tabstop>doubleSpinBox_43</tabstop>
-  <tabstop>doubleSpinBox_44</tabstop>
   <tabstop>verticalSlider_zoom</tabstop>
   <tabstop>toolButton_up</tabstop>
   <tabstop>toolButton_left</tabstop>
@@ -1103,10 +1125,331 @@
   <tabstop>radioButton_orthograficProjektion</tabstop>
   <tabstop>radioButton_projectivicProjektion</tabstop>
   <tabstop>checkBox_stereo</tabstop>
-  <tabstop>doubleSpinBox_24</tabstop>
-  <tabstop>doubleSpinBox_14</tabstop>
-  <tabstop>doubleSpinBox_34</tabstop>
+  <tabstop>doubleSpinBox_13</tabstop>
+  <tabstop>doubleSpinBox_03</tabstop>
+  <tabstop>doubleSpinBox_23</tabstop>
  </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>verticalSlider_zoom</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>zoom(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>742</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>503</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_up</sender>
+   <signal>clicked()</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>up()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>753</x>
+     <y>500</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>658</x>
+     <y>489</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_left</sender>
+   <signal>clicked()</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>left()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>721</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_right</sender>
+   <signal>clicked()</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>right()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>786</x>
+     <y>532</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>491</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_down</sender>
+   <signal>clicked()</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>down()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>752</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>659</x>
+     <y>566</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_30</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH30(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>827</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_31</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH31(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>892</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>600</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_32</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH32(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1007</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_33</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH33(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1058</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_20</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH20(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>820</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>626</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_21</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH21(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>917</x>
+     <y>187</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_22</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH22(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>979</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_10</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH10(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>853</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>600</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_11</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH11(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>920</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>540</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_12</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH12(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>965</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_00</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH00(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>838</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>624</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_01</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH01(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>935</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>545</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_02</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setH02(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1023</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>543</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_projectivicProjektion</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setPerspectivicProjection(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>756</x>
+     <y>684</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>655</x>
+     <y>688</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_stereo</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>qirGLWidget</receiver>
+   <slot>setStereoscope(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>879</x>
+     <y>709</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>647</x>
+     <y>727</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

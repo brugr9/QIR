@@ -26,10 +26,6 @@ public:
 
 private slots:
 
-    //////////////////////////////////////////////////
-    //// Menu
-    //////////////////////////////////////////////////
-
     /**
      * @brief Mittelpunktsquadrik gewählt.
      */
@@ -80,130 +76,6 @@ private slots:
      */
     void on_actionInfo_triggered();
 
-    //////////////////////////////////////////////////
-    //// Transformation
-    //////////////////////////////////////////////////
-
-
-    /**
-     * @brief Transformation: h11 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_11_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h12 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_12_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h13 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_13_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h21 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_21_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h22 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_22_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h23 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_23_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h31 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_31_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h32 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_32_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h32 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_33_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h41 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_41_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h42 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_42_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h43 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_43_valueChanged(double arg1);
-    /**
-      * @brief Transformation: h44 geändert.
-     * @param arg1
-     */
-    void on_doubleSpinBox_44_valueChanged(double arg1);
-
-
-    //////////////////////////////////////////////////
-    //// Navigation
-    //////////////////////////////////////////////////
-
-    /**
-      * @brief Zoom-Slider changed.
-     * @param value Zoom-Wert, der angezeigt werden soll.
-     */
-    void on_verticalSlider_zoom_valueChanged(int value);
-
-    /**
-      * @brief Hoch-Druckknopf geklickt.
-     */
-    void on_toolButton_up_clicked();
-
-    /**
-      * @brief Runter-Druckknopf geklickt.
-     */
-    void on_toolButton_down_clicked();
-
-    /**
-      * @brief Links-Druckknopf geklickt.
-     */
-    void on_toolButton_left_clicked();
-
-    /**
-      * @brief Rechts-Druckknopf geklickt.
-     */
-    void on_toolButton_right_clicked();
-
-    //////////////////////////////////////////////////
-    //// Projektion
-    //////////////////////////////////////////////////
-
-    /**
-     * @brief Orthografische Projektion gewählt.
-     * @param checked
-     */
-    void on_radioButton_orthograficProjektion_toggled(bool checked);
-
-    /**
-      * @brief Perspektivische Projektion gewählt.
-     * @param checked
-     */
-    void on_radioButton_projectivicProjektion_toggled(bool checked);
-
-    /**
-      * @brief Stereobildwidergabe gewählt.
-     * @param checked
-     */
-    void on_checkBox_stereo_toggled(bool checked);
-
 private:
     /**
      * @brief A field for the graphic user interface: Main window.
@@ -216,18 +88,11 @@ private:
     QDialog *about;
 
     /**
-     * @brief A field for a MyGLWidget.
-     */
-    Qir::QirGLWidget qirGLWidget;
-
-    /**
      * @brief A field for an equation.
      * Gemischt-quadratische Koordinatengleichung der Abbildung mit
      * Koeffizienten aus der Koeffizientenmatrize der Abbildung.
      */
     QString equation;
-
-    int zoom;
 
 
     /**

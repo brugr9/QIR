@@ -14,12 +14,6 @@ LIBS += \
       -lGL \
       -lglut
 
-# INCLUDEPATH += \
-#        /usr/include/c++/4.8 \
-#        /usr/include/c++/4.8/bits \
-#        /usr/include/x86_64-linux-gnu \
-#        /usr/include/x86_64-linux-gnu/c++/4.8
-
 # Input
 HEADERS += \
       lib/OpenGL.h \

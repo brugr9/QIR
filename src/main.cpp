@@ -1,16 +1,10 @@
-// OpenGL helper includes
-#include "lib/OpenGL.h"
-// #include "lib/UtilGLSL.hpp"
-
-// Qt includes
 #include "mainwindow.h"
 #include <QApplication>
+#include "lib/OpenGL.h"
 
-//
-#include "qirmodel.h"
 
 /**
-  * Hauptmethode: initialisiert GLUT, lädt die Shader-Programme, initialisiert
+  * Hauptmethode: initialisiert GLUT, initialisiert
   *  die Qt-Applikation und zeigt das Hauptfenster des GUI.
   *
  * @brief main
@@ -20,21 +14,12 @@
  */
 int main(int argc, char *argv[])
 {
+    // GLUT
     glutInit(&argc, argv);
-    /*
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
     glutInitContextVersion(4, 2);
     glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
-    */
-
-    // load shader programs
-    /*
-    argc = 3;
-    argv[0] = "";
-    argv[1] = "glsl/qir.vert";
-    argv[2] = "glsl/qir.frag";
-    PROGRAM_ID = UtilGLSL::initShaderProgram(argc, argv);
-    */
+    //glutInitContextFlags(GLUT_FORWARD_COMPATIBLE | GLUT_DEBUG);
 
     QApplication app(argc, argv);
 

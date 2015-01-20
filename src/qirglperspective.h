@@ -42,9 +42,10 @@ typedef struct {
  * @brief Move the camera to the home position or to a predefined stereo configuration.
  * The model is assumed to be in a 10x10x10 cube centered at the origin.
  *
+ * @param camera Pointer to the camera to initialize.
  * @param mode The mode to set.
  */
-void initCamera(int mode);
+void initCamera(CAMERA *camera, int mode);
 
 /**
  * @brief Normalizes a given vector.
@@ -61,8 +62,3 @@ void normalise(XYZ *p);
  * @param v3pointer Pointer to the third vector.
  */
 void crossProd(XYZ v1, XYZ v2, XYZ *v3pointer);
-
-/**
- * @brief stereoscope
- */
-void stereoscope(void);
