@@ -34,3 +34,4 @@ Makefile*
 
 # debug and release
 /debug
+/release
