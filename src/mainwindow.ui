@@ -1133,7 +1133,7 @@
  <connections>
   <connection>
    <sender>verticalSlider_zoom</sender>
-   <signal>sliderMoved(int)</signal>
+   <signal>valueChanged(int)</signal>
    <receiver>qirGLWidget</receiver>
    <slot>zoom(int)</slot>
    <hints>

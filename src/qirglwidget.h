@@ -54,6 +54,11 @@ public:
 private:
 
     /**
+     * @brief qType
+     */
+    QUADRIC_TYPE qType;
+
+    /**
      * @brief A field for a collineation matrix.
      */
     mat4 matCollineation;
@@ -89,11 +94,6 @@ private:
     bool STEREOSCOPE_DRAW;
 
     /**
-     * @brief A field for a camera.
-     */
-    // CAMERA camera;
-
-    /**
      * @brief A field for a wireframe mode state.
      */
     bool WIREFRAME_MODE;
@@ -103,7 +103,19 @@ private:
      */
     bool ORIENTATION_DRAW;
 
+    /**
+     * @brief A field for a bounding box draw state.
+     */
+    bool BOUNDING_BOX;
 
+    /**
+     * @brief A field for a camera.
+     */
+    // CAMERA camera;
+
+    /**
+     * @brief errorCallback
+     */
     _GLUfuncptr errorCallback;
 
 signals:
@@ -112,8 +124,14 @@ signals:
 public slots:
 
     /**
+     * @brief setQuadricType
+     * @param type The type to set.
+     */
+    void setQuadricType(QUADRIC_TYPE type);
+
+    /**
      * @brief setH00
-     * @param value
+     * @param value The value to set.
      */
     void setH00(double value);
     /**
@@ -201,19 +219,23 @@ public slots:
     /**
      * @brief setPerspectivicProjection
      */
-    void setPerspectivicProjection(bool);
+    void setPerspectivicProjection(bool state);
     /**
      * @brief setStereoscope
      */
-    void setStereoscope(bool);
+    void setStereoscope(bool state);
     /**
      * @brief setWireframe
      */
-    void setWireframe(bool);
+    void setWireframe(bool state);
     /**
      * @brief setOrientation
      */
-    void setOrientation(bool);
+    void setOrientation(bool state);
+    /**
+     * @brief setBoundingBox
+     */
+    void setBoundingBox(bool state);
 
 protected:
 
@@ -235,6 +257,11 @@ protected:
      */
     void resizeGL(int width, int height);
 
+
+    // void mousePressEvent(QMouseEvent *);
+
+    // void keyPressEvent(QKeyEvent *);
+
 private:
 
     /**
@@ -246,6 +273,8 @@ private:
      * @brief Zoom out.
      */
     void zoomOut(void);
+
+    // QTimer animation();
 
     /**
      * @brief Initialises the geometry.

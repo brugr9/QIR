@@ -53,14 +53,23 @@ bool BOUNDING_BOX = false;
 QirGLWidget::QirGLWidget(QWidget *parent)
     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
-    this->projectionType = ORTHOGRAPHIC;
-    this->WIREFRAME_MODE = false;
+
+    this->qType = CENTRIC;
+    //
     this->ORIENTATION_DRAW = true;
-    this->zoomOutValue = 0.98;
+    this->BOUNDING_BOX = true;
+    this->WIREFRAME_MODE = false;
+    //
+    this->zoom(5);
+    this->zoomOutValue = 0.9;
     this->zoomInValue = 2 - this->zoomOutValue;
-    this->rotateValue = 1.2;
+    this->rotateValue = 2.0;
+    //
+    this->projectionType = ORTHOGRAPHIC;
+    this->STEREOSCOPE_DRAW = false;
     // initCamera(this->camera, 2);
     this->errorCallback = 0;
+    //
     this->initializeGL();
 }
 
@@ -83,8 +92,8 @@ void QirGLWidget::initializeGL()
     glEnable(GL_POLYGON_OFFSET_FILL);
 
     // background color
-    //glClearColor(BLACK[0], BLACK[1], BLACK[2], BLACK[3]); // white
-    glClearColor(WHITE[0], WHITE[1], WHITE[2], WHITE[3]); // black
+    //glClearColor(BLACK[0], BLACK[1], BLACK[2], BLACK[3]);
+    glClearColor(WHITE[0], WHITE[1], WHITE[2], WHITE[3]);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -166,10 +175,10 @@ void QirGLWidget::paintGL()
 
         // draw
         glPushMatrix();
-        // if (this->AXIS_DRAW) {
+        if (this->ORIENTATION_DRAW) {
             this->drawOrientation(1.2);
-        //}
-        drawGeometry(0);
+        }
+        drawGeometry(qType);
         glPopMatrix();
 
 
@@ -177,6 +186,7 @@ void QirGLWidget::paintGL()
         // Stereografische Projektion
         // stereoscope();
     }
+
 }
 
 /**
@@ -192,7 +202,15 @@ void QirGLWidget::resizeGL(int width, int height)
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(20, (GLdouble) width / height, 1.0, 20.0);
+    if (this->projectionType == PERSPECIVIC) {
+        // gluPerspective(fovy, aspect, zNear, zFar);
+        gluPerspective(20, (GLdouble) width / height, 1.0, 20.0);
+    } else if (this->projectionType == ORTHOGRAPHIC){
+        // glOrtho(left, right, bottom, top, zNear, zFar);
+        // glOrtho(10.0, 10.0, 10.0, 10.0, 1.0, 20.0);
+        gluPerspective(20, (GLdouble) width / height, 1.0, 20.0);
+    }
+
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
@@ -217,6 +235,13 @@ void QirGLWidget::resizeGL(int width, int height)
  */
 void updateEquation(void){
     // TODO updateEquation in mainwindow
+}
+
+/**
+ * {@inheritDoc}
+ */
+void QirGLWidget::setQuadricType(QUADRIC_TYPE type){
+    this->qType = type;
 }
 
 /**
@@ -320,7 +345,6 @@ void QirGLWidget::zoom(int value){
         this->zoomIn();
     }
     this->zoomValue = value;
-    this->updateGL();
 }
 
 /**
@@ -394,8 +418,17 @@ void QirGLWidget::setOrientation(bool state){
 /**
  * {@inheritDoc}
  */
+void QirGLWidget::setBoundingBox(bool state){
+    this->BOUNDING_BOX = state;
+    this->updateGL();
+}
+
+/**
+ * {@inheritDoc}
+ */
 void QirGLWidget::zoomIn(){
     glScalef(zoomInValue, zoomInValue, zoomInValue);
+    this->updateGL();
 }
 
 /**
@@ -403,6 +436,7 @@ void QirGLWidget::zoomIn(){
  */
 void QirGLWidget::zoomOut(){
     glScalef(zoomOutValue, zoomOutValue, zoomOutValue);
+    this->updateGL();
 }
 
 /**
@@ -618,5 +652,27 @@ void QirGLWidget::initGeometry(void) {
  * {@inheritDoc}
  */
 void QirGLWidget::drawGeometry(int type) {
+
+    GLuint offset = NUMBER_OF_ENTRIES_PER_FIGURE * type;
+
+    //* Bounding-Box
+    if (BOUNDING_BOX) {
+        glColor4fv(GREY);
+        glCallList(startList + offset);
+    }
+
+    if (type == CONIC) {
+        glTranslatef(0.0, 0.0, -1.0);
+    }
+
+    //* Festkörper
+    glEnable(GL_LIGHTING);
+    glShadeModel(GL_SMOOTH); // GL_FLAT or GL_SMOOTH
+    glCallList(startList + ++offset);
+    glDisable(GL_LIGHTING);
+
+    //* Drahtkörper
+    glColor3f(0.0, 0.0, 0.0); // black
+    glCallList(startList + ++offset);
 
 }
