@@ -17,7 +17,7 @@ Qt-Applikation zur Visualisierung von Quadriken im Raum.
 - Geometrische Transformation (Skalierung, Rotation)
 - Orthogonale und perspektivische Projektion
 - Stereoskopie, spektrales Multiplexing, Farbanaglyphen
-- Programmiersprache C/C++
+- Programmiersprache C/C++, objekt-orientierte Programmierung in C++
 - Qt-Designer, QGLWidget, OpenGL, GLUT, GLU, GLM, Vertex-Shader
 
 ##### Bericht und Präsentation
