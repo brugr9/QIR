@@ -20,6 +20,5 @@ Qt-Applikation zur Visualisierung von Quadriken im Raum.
 - Objektorientierte Programmierung (OOP), Programmiersprache C/C++
 - Qt-Designer, QGLWidget, OpenGL, GLUT, GLU, GLM, Vertex-Shader
 
-##### Bericht und Präsentation
-- <a target="_blank" href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-bericht">Bericht</a> (auf Speaker Deck)
+##### Präsentation
 - <a target="_blank" href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen-prasentation">Präsentation</a> (auf Speaker Deck)
