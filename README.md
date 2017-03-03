@@ -22,4 +22,4 @@ Qt-Applikation zur Visualisierung von Quadriken im Raum.
 
 ##### Dokumente
 - <a target="_blank" href="https://speakerdeck.com/brugr9/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen">Präsentation</a> (auf Speaker Deck)
-- <a target="_blank" href="https://www.hashdoc.com/documents/262838/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen">Bericht</a> (auf Hashdoc)
+- <a target="_blank" href="https://www.hashdoc.com/documents/466376/quadriken-im-raum-und-ihre-schnittbilder-an-ebenen-flachen">Bericht</a> (auf Hashdoc)
