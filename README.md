@@ -7,6 +7,7 @@ Desktop-Applikation zur Visualisierung von Quadriken im Raum.
 
 ![qir GUI](doc/qir_gui.png "qir GUI")
 
-Modul Objektorientierte Geometrie, Semesterarbeit FS 2015. 
+<hr>
+Studiengang: Informatik, Modul Objektorientierte Geometrie, Semesterarbeit FS 2015. 
 
 Berner Fachhochschule, Abteilung Technik und Informatik BFH-TI, Biel/Bienne.
